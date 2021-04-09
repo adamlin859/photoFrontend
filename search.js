@@ -91,13 +91,13 @@ function get_images(event){
   sdk.searchGet(params,{},{}).then(function(result){
     const album = document.querySelector("#album");
     // console.log(result);
+    document.getElementById("album").innerHTML = "";
     var links = result['data']['result'];
 
     let i = 0;
     for (urls of links) {
-      if (i === 5) { break; }
-      let ins = "<b>" + urls['labels'].join(',') + "<b>";
-      ins += '<div class="column"><img src="' + urls['url'] + '" width="600" height="400"></div>'
+      let ins = '<div class="gallery"> <img src="' + urls['url'] + '" width="600" height="400">';
+      ins +=  '<div class="desc">' +  urls['labels'].join(' , ') + '</div></div>';
       album.insertAdjacentHTML("beforeend", ins);
       i++;
     }
