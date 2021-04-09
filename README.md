@@ -1,2 +1,2 @@
 hw2 Readme
-edit more readme
+dit more readme
